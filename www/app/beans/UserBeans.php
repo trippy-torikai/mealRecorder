@@ -1,10 +1,14 @@
-#!/bin/sh
+class User {
 
-GREET="hello, "
-NAME="torikai"
+    private $name;
+    private $password;
+    private $userId;
+    
+    public function setName($name) {
+        $this->name = $name;
+    }
+    public function getName() {
+        retunn $this->name;
+    }
 
-
-echo "who are you?"
-echo "${GREET}${NAME}!"
-echo "----------------------"
-echo $0
+}
