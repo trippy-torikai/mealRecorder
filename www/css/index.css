@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 100px;
+    margin: 40px 0px;
+}
+
+.form {
+    margin: 2px auto;
+    width: 150px;
+    display: block;
+}
+
+img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 80px;
+    padding: 20px;
+    border: 2px solid black;
+    display: inline;
+}
+
