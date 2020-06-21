@@ -14,6 +14,7 @@ $password = $_POST['password'];
     if($loginUser->getUserId() == null) {
         header('Location: http://localhost:80/');
     }
-
-    echo "あなたのユーザーIDは".$loginUser->getUserId();
+    session_start();
+    $_SESSION['loginUser'] = serialize($loginUser);
+    header('Location: http://localhost:80/main.php');
 ?>
