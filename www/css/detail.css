@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+}
+
+.main-contents {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.main-picture {
+    width: 100%;
+}
+
+.sub-picture img {
+    width: 25%;
+    float: left;
+    text-align: left;
+}

@@ -9,12 +9,14 @@
 <body>
     <?php 
     require_once('/var/www/html/app/model/loginService.php');
-    ?>
-	<h1>test</h1>
-    <?php 
+
     //sessionでobjectを受け渡す場合はserializeが必要
     $loginUser = unserialize($_SESSION['loginUser']);
-    echo $loginUser->getUserId();
+    //echo $loginUser->getUserId();
     ?>
     
+    <h1?>test</h1>
+    <a href="./detail.php?q=1">リンク</a>
+
+
 </body>
