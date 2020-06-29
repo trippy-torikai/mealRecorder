@@ -17,6 +17,15 @@ class Dao {
         return $result;
     }
 
+    public function selectImage($foodId) {
+
+        //DB接続とクエリ実行
+        $images = $this->db->query("select img_path from images where food_id=".$foodId." ORDER BY priority");
+        //fetchで整形
+        $result = $images->fetchAll(PDO::FETCH_COLUMN);
+        return $result;
+    }
+
 }
 
 
