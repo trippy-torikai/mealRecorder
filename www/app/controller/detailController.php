@@ -19,10 +19,14 @@ if(isset($_GET['q'])) {
     $foodId = (int)$_GET['q'];
 }
 
+//dbコネクトを取得
 $dao = new Dao();
-$imagePaths = $dao->selectImage($foodId);
 
+//画像パスを取得、セッションに配置 
+$imagePaths = $dao->selectImage($foodId);
 $_SESSION['imagePaths'] = $imagePaths;
+
+
 
 header('Location: http://localhost:80/detail.php');
 ?>
