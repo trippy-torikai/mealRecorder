@@ -1,5 +1,5 @@
 <?php session_start();
-//session_startは先頭で行う
+//session_startは先頭で行う.
 
 
 //クラスを呼び出す時は必要
