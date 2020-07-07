@@ -1,3 +1,11 @@
+<?php
+
+//================================
+//             User
+//--------------------------------
+//　ユーザーの情報を格納するbeanクラス
+//================================
+
 class User {
 
     private $name;
@@ -8,7 +16,9 @@ class User {
         $this->name = $name;
     }
     public function getName() {
-        retunn $this->name;
+        return $this->name;
     }
 
 }
+
+?>

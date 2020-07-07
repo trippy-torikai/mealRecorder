@@ -9,5 +9,6 @@
 		<input class="form" type="text" name="userName" placeholder="User name">
 		<input class="form" type="text" name="password" placeholder="Password">
 		<input type="submit" value="enter">
+	</form>	
 </body>
 

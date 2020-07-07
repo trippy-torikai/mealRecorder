@@ -17,7 +17,8 @@ $utils->isAuthenticated($_SESSION['loginUser']);
 	<link rel="stylesheet" type="text/css" href="/css/detail.css">
 </head>
 <body>
-
+    <div class="header">
+    </div>
     <div class="main-contents">
         <h1>詳細</h1>
         <img class="main-picture" src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">

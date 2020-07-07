@@ -14,18 +14,22 @@ $utils->isAuthenticated($_SESSION['loginUser']);
 
 
 //パラメータ取得
-$foodId;
+//取得されたパラメータで選択された飲食店を判断する
+$restaurantId;
 if(isset($_GET['q'])) {
-    $foodId = (int)$_GET['q'];
+    $restaurantId = (int)$_GET['q'];
 }
 
 //dbコネクトを取得
 $dao = new Dao();
 
 //画像パスを取得、セッションに配置 
-$imagePaths = $dao->selectImage($foodId);
+$imagePaths = $dao->selectImage($restaurantId);
 $_SESSION['imagePaths'] = $imagePaths;
 
+//店舗情報を取得、セッションに配置
+$restaurantData = $dao->selectRestaurantData($restaurantId);
+$_SESSION['restaurantData'] = $restaurantData;
 
 
 header('Location: http://localhost:80/detail.php');
