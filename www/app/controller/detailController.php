@@ -4,7 +4,7 @@ session_start();
 
 //クラスを呼び出す時は必要
 require_once('/var/www/html/app/model/utils.php');
-require_once('/var/www/html/app/model/dao.php');
+require_once('/var/www/html/app/model/userDao.php');
 
 
 
@@ -21,14 +21,14 @@ if(isset($_GET['q'])) {
 }
 
 //dbコネクトを取得
-$dao = new Dao();
+$userDao = new UserDao();
 
 //画像パスを取得、セッションに配置 
-$imagePaths = $dao->selectImage($restaurantId);
+$imagePaths = $userDao->selectImage($restaurantId);
 $_SESSION['imagePaths'] = $imagePaths;
 
 //店舗情報を取得、セッションに配置
-$restaurantData = $dao->selectRestaurantData($restaurantId);
+$restaurantData = $restraurantDao->selectData($restaurantId);
 $_SESSION['restaurantData'] = $restaurantData;
 
 

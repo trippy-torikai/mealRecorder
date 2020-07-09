@@ -1,5 +1,5 @@
 <?php
-require_once('/var/www/html/app/model/dao.php');
+require_once('/var/www/html/app/model/userDao.php');
 
 class loginService {
 
@@ -11,8 +11,8 @@ class loginService {
         $this->userName = $userName;
         $this->password = $password;
 
-        $dao = new Dao();
-        $this->userId = $dao->selectUserId($userName, $password);
+        $userDao = new UserDao();
+        $this->userId = $userDao->selectUserId($userName, $password);
     }
 
     public function getUserName(){
