@@ -22,12 +22,19 @@ $utils->isAuthenticated($_SESSION['loginUser']);
     <div class="main-contents">
         <h1>詳細</h1>
         <img class="main-picture" src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
-            <div class="sub-picture">
-                <img src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
-                <img src="img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
-                <img src="img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
-                <img src="img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
-            </div>
+        <div class="sub-picture">
+            <img src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
+            <img src="img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
+            <img src="img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
+            <img src="img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <h1>店名：<?php echo $_SESSION['restaurantData']['name'] ?></h1>
+        <h1>住所：<?php echo $_SESSION['restaurantData']['address'] ?></h1>
+
         <a href="main.php">戻る</a>
 
         
