@@ -5,7 +5,7 @@ require_once('/var/www/html/app/model/loginService.php');
 
 <!DOCTYPE html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/css/index.css"> 
+	<link rel="stylesheet" type="text/css" href="/css/main.css"> 
 </head>
 <body>
     <?php 
@@ -13,13 +13,17 @@ require_once('/var/www/html/app/model/loginService.php');
     $loginUser = unserialize($_SESSION['loginUser']);
     ?>
     
-    <div class="header">
+    <header>
         <p class="title">Food Recorder</p>
         <form action="" method="post">
             <input class="sarch-window" name="serchString" type="text" placeholder="キーワードで探す"＞
             <input type="submit">
+            <p class="menu-btn">■</p>
         </form>
-        <p class="menu-btn">■</p>
+    </header> 
+    <div class="header2">
+        
+
     </div>
 
     <a href="./app/controller/detailController.php?q=1">カレー</a><br>

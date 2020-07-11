@@ -17,23 +17,28 @@ $utils->isAuthenticated($_SESSION['loginUser']);
 	<link rel="stylesheet" type="text/css" href="/css/detail.css">
 </head>
 <body>
-    <div class="header">
-    </div>
+    <header>
+    </header>
     <div class="main-contents">
-        <h1>詳細</h1>
-        <img class="main-picture" src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
-        <div class="sub-picture">
-            <img src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
-            <img src="img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
-            <img src="img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
-            <img src="img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
+        <div class="top-contents">
+            <h1><?php echo $_SESSION['restaurantData']['name'] ?></h1>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <h1>店名：<?php echo $_SESSION['restaurantData']['name'] ?></h1>
-        <h1>住所：<?php echo $_SESSION['restaurantData']['address'] ?></h1>
+        <div class="mid-contents">
+            <div class="picture-wrapper">        
+                <img class="main-picture" src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
+                <div class="sub-picture">
+                    <img src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
+                    <img src="img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
+                    <img src="img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
+                    <img class="end-subpicture" src="img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
+                </div>
+            </div>
+            <div class="info-wrapper">
+                <h1>住所：<?php echo $_SESSION['restaurantData']['address'] ?></h1>
+                <h1>最寄り駅：<?php echo $_SESSION['restaurantData']['closestStation'] ?></h1>
+                <h1>予算：<?php echo $_SESSION['restaurantData']['priceAverage'] ?>円</h1>
+            </div>
+        </div>
 
         <a href="main.php">戻る</a>
 

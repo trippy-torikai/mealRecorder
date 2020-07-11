@@ -8,11 +8,9 @@ require_once('/var/www/html/app/model/userDao.php');
 require_once('/var/www/html/app/model/imageDao.php');
 require_once('/var/www/html/app/model/restaurantDao.php');
 
-
 //認証確認
 $utils = new Utils();
 $utils->isAuthenticated($_SESSION['loginUser']);
-
 
 //パラメータ取得
 //取得されたパラメータで選択された飲食店を判断する
@@ -20,9 +18,6 @@ $restaurantId;
 if(isset($_GET['q'])) {
     $restaurantId = (int)$_GET['q'];
 }
-
-//dbコネクトを取得
-$userDao = new UserDao();
 
 //画像パスを取得、セッションに配置
 $imageDao = new ImageDao(); 
@@ -34,7 +29,7 @@ $restaurantDao = new RestaurantDao();
 $restaurantData = $restaurantDao->selectData($restaurantId);
 $_SESSION['restaurantData'] = $restaurantData;
 
-
+//detail.phpへリダイレクト
 header('Location: http://localhost:80/detail.php');
 ?>
 
