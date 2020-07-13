@@ -18,6 +18,7 @@ $utils->isAuthenticated($_SESSION['loginUser']);
 </head>
 <body>
     <header>
+        <h1>FOOD RECODER</h1>
     </header>
     <div class="main-contents">
         <div class="top-contents">
