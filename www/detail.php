@@ -14,7 +14,7 @@ $utils->isAuthenticated($_SESSION['loginUser']);
 
 <!DOCTYPE html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/css/detail.css">
+	<link rel="stylesheet" type="text/css" href="/resource/css/detail.css">
 </head>
 <body>
     <header>
@@ -26,12 +26,12 @@ $utils->isAuthenticated($_SESSION['loginUser']);
         </div>
         <div class="mid-contents">
             <div class="picture-wrapper">        
-                <img class="main-picture" src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
+                <img id="main-picture" src="resource/img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
                 <div class="sub-picture">
-                    <img src="img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
-                    <img src="img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
-                    <img src="img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
-                    <img class="end-subpicture" src="img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
+                    <img id="picture-1" src="resource/img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
+                    <img id="picture-2" src="resource/img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
+                    <img id="picture-3" src="resource/img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
+                    <img id="picture-4" src="resource/img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
                 </div>
             </div>
             <div class="info-wrapper">
@@ -40,9 +40,10 @@ $utils->isAuthenticated($_SESSION['loginUser']);
                 <h1>予算：<?php echo $_SESSION['restaurantData']['priceAverage'] ?>円</h1>
             </div>
         </div>
-
-        <a href="main.php">戻る</a>
-
-        
+        <a href="main.php">戻る</a>       
     </div>
+
+    <!-- js呼び出し -->
+    <script type="text/javascript" src="/resource/js/detail.js"></script>
+
 </body>
