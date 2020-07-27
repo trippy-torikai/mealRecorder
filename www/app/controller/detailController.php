@@ -8,6 +8,7 @@ require_once('/var/www/html/app/model/userDao.php');
 require_once('/var/www/html/app/model/imageDao.php');
 require_once('/var/www/html/app/model/restaurantDao.php');
 require_once('/var/www/html/app/model/restaurantTagDao.php');
+require_once('/var/www/html/app/model/commentDao.php');
 
 //認証確認
 $utils = new Utils();
@@ -35,9 +36,12 @@ $restaurantTagDao = new RestaurantTagDao();
 $restaurantTags = $restaurantTagDao->selectTag($restaurantId);
 $_SESSION['restaurantTags'] = $restaurantTags;
 
+//店舗コメント情報を取得、セッションに配置
+$commentDao = new CommentDao(); 
+$comments = $commentDao->selectComment($restaurantId);
+$_SESSION['comments'] = $comments;
+
 //detail.phpへリダイレクト
 header('Location: http://localhost:80/detail.php');
+
 ?>
-
-
-

@@ -7,8 +7,6 @@
 //=============================
 
 require_once('/var/www/html/app/model/daoAbstract.php');
-//require_once('/var/www/html/app/model/restaurantDataBean.php');
-
 
 class RestaurantDao extends DaoAbstract {
 
