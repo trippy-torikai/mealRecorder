@@ -40,8 +40,15 @@ $utils->isAuthenticated($_SESSION['loginUser']);
                 <h1>予算：<?php echo $_SESSION['restaurantData']['priceAverage'] ?>円</h1>
             </div>
         </div>
+        <?php
+            foreach($_SESSION['restaurantTags'] as $tag) {
+                echo $tag;
+            }
+        ?>
         <a href="main.php">戻る</a>       
     </div>
+
+    
 
     <!-- js呼び出し -->
     <script type="text/javascript" src="/resource/js/detail.js"></script>

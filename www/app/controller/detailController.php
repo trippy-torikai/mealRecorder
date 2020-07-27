@@ -7,6 +7,7 @@ require_once('/var/www/html/app/model/utils.php');
 require_once('/var/www/html/app/model/userDao.php');
 require_once('/var/www/html/app/model/imageDao.php');
 require_once('/var/www/html/app/model/restaurantDao.php');
+require_once('/var/www/html/app/model/restaurantTagDao.php');
 
 //認証確認
 $utils = new Utils();
@@ -28,6 +29,11 @@ $_SESSION['imagePaths'] = $imagePaths;
 $restaurantDao = new RestaurantDao(); 
 $restaurantData = $restaurantDao->selectData($restaurantId);
 $_SESSION['restaurantData'] = $restaurantData;
+
+//店舗tag情報を取得、セッションに配置
+$restaurantTagDao = new RestaurantTagDao(); 
+$restaurantTags = $restaurantTagDao->selectTag($restaurantId);
+$_SESSION['restaurantTags'] = $restaurantTags;
 
 //detail.phpへリダイレクト
 header('Location: http://localhost:80/detail.php');
