@@ -76,3 +76,40 @@ header h1 {
 #picture-4 {
     padding: 0;
 }
+
+.comment-wrapper {
+    padding: 0 0 0 15px;
+    margin: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+
+.comment {
+    padding: 10px;
+    margin: 0 0 15px 0;
+    border: solid 1px #CCCCCC;
+}
+
+.comment-title {
+    padding: 0 0 5px 5px;
+    margin: 0;
+    border-bottom: solid 1px #CCCCCC;
+}
+
+.comment-text {
+    padding: 10px 0 0 5px;
+    margin: 0;
+}
+
+.comment-rank {
+    padding: 0;
+    margin: 0;
+}
+
+.comment-name {
+    padding: 0;
+    margin: 0;
+}
+

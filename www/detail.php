@@ -35,13 +35,13 @@ $utils->isAuthenticated($_SESSION['loginUser']);
                 </div>
             </div>
             <div class="comment-wrapper">
-                <div class="comment-1">
+                <div class="comment">
                     <h3 class=comment-title><?php echo $_SESSION['comments'][0]['tittle'] ?></h3>
                     <h4 class=comment-text><?php echo $_SESSION['comments'][0]['text'] ?></h4>
                     <h4 class=comment-rank><?php echo $_SESSION['comments'][0]['rank'] ?></h4>
                     <h4 class=comment-name><?php echo $_SESSION['comments'][0]['name'] ?></h4>
                 </div>
-                <div class="comment-2">
+                <div class="comment">
                     <h3 class=comment-title><?php echo $_SESSION['comments'][1]['tittle'] ?></h3>
                     <h4 class=comment-text><?php echo $_SESSION['comments'][1]['text'] ?></h4>
                     <h4 class=comment-rank><?php echo $_SESSION['comments'][1]['rank'] ?></h4>
@@ -58,7 +58,7 @@ $utils->isAuthenticated($_SESSION['loginUser']);
             foreach($_SESSION['restaurantTags'] as $tag) {
                 echo $tag;
             }
-            
+
         ?>
         <a href="main.php">戻る</a>       
     </div>
