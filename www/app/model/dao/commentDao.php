@@ -31,7 +31,7 @@ class commentDao extends DaoAbstract {
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':restaurant_id', $restaurantId, PDO::PARAM_INT);
         $stmt->execute();
-        $comments = $stmt->fetch(PDO::FETCH_ASSOC);
+        $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $comments;
     }

@@ -1,5 +1,5 @@
 <?php
-require_once('/var/www/html/app/model/userDao.php');
+require_once('/var/www/html/app/model/dao/userDao.php');
 
 class loginService {
 

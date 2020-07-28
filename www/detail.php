@@ -34,6 +34,20 @@ $utils->isAuthenticated($_SESSION['loginUser']);
                     <img id="picture-4" src="resource/img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
                 </div>
             </div>
+            <div class="comment-wrapper">
+                <div class="comment-1">
+                    <h3 class=comment-title><?php echo $_SESSION['comments'][0]['tittle'] ?></h3>
+                    <h4 class=comment-text><?php echo $_SESSION['comments'][0]['text'] ?></h4>
+                    <h4 class=comment-rank><?php echo $_SESSION['comments'][0]['rank'] ?></h4>
+                    <h4 class=comment-name><?php echo $_SESSION['comments'][0]['name'] ?></h4>
+                </div>
+                <div class="comment-2">
+                    <h3 class=comment-title><?php echo $_SESSION['comments'][1]['tittle'] ?></h3>
+                    <h4 class=comment-text><?php echo $_SESSION['comments'][1]['text'] ?></h4>
+                    <h4 class=comment-rank><?php echo $_SESSION['comments'][1]['rank'] ?></h4>
+                    <h4 class=comment-name><?php echo $_SESSION['comments'][1]['name'] ?></h4>
+                </div>
+            </div>
             <div class="info-wrapper">
                 <h1>住所：<?php echo $_SESSION['restaurantData']['address'] ?></h1>
                 <h1>最寄り駅：<?php echo $_SESSION['restaurantData']['closestStation'] ?></h1>
@@ -44,8 +58,7 @@ $utils->isAuthenticated($_SESSION['loginUser']);
             foreach($_SESSION['restaurantTags'] as $tag) {
                 echo $tag;
             }
-
-            var_dump($_SESSION['comments']);
+            
         ?>
         <a href="main.php">戻る</a>       
     </div>
