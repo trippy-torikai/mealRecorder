@@ -27,5 +27,6 @@ require_once('/var/www/html/app/model/loginService.php');
     </div>
 
     <a href="./app/controller/detailController.php?q=1">カレー</a><br>
-    <a href="./app/controller/detailController.php?q=2">ラーメン</a>
+    <a href="./app/controller/detailController.php?q=2">ラーメン</a><br>
+    <a href="./app/controller/detailController.php?q=0">null　test</a>
 </body>

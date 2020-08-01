@@ -17,6 +17,13 @@ $utils->isAuthenticated($_SESSION['loginUser']);
 $restaurantId;
 if(isset($_GET['q'])) {
     $restaurantId = (int)$_GET['q'];
+} else {
+    //task
+    //パラメータがnullだった場合の処理を実装
+    //エラーメッセージを保持するセッションを作成
+    //戻ったページで表示する
+    //理想としては遷移元に帰りたい
+    header('Location: http://localhost:80/main.php');
 }
 
 //レストラン情報を取得、セッションに格納

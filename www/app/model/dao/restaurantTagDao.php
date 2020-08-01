@@ -17,6 +17,7 @@ class RestaurantTagDao extends DaoAbstract {
     // 店舗tag情報をDBから取得する
     // 取得したtagは一次元
     // 配列に格納してreturn
+    // 取得できなかた場合はboolean(false)を返す
     //====================================
 
     public function selectTag($restaurantId) {
@@ -27,21 +28,26 @@ class RestaurantTagDao extends DaoAbstract {
                 ON tags.tag_id = restag.tag_id 
                 WHERE restaurant_id = :restaurant_id');
 
-        //バインドと実行
+        //検索するIDをバインド
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':restaurant_id', $restaurantId, PDO::PARAM_INT);
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-        
-        //一次元配列に整える
-        $restaurantTags = array();
-        foreach($result as $tag) {
-            array_push($restaurantTags, $tag[0]);
+
+        //sqlを実行する
+        //成功：取得したタグを一次配列に整形してreturn
+        //失敗：boolean(false)をreturn
+        if($stmt->execute()) {
+            $result = $stmt->fetchAll();
+            $restaurantTags = array_column($result, 0);
+            return $restaurantTags;
+        } else {
+            return false;
         }
 
-        return $restaurantTags;
     }
+
+        
 }
+
 
 
 ?>

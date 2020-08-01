@@ -20,6 +20,7 @@ $utils->isAuthenticated($_SESSION['loginUser']);
     <header>
         <h1>FOOD RECODER</h1>
     </header>
+
     <div class="main-contents">
         <div class="top-contents">
             <h1><?php echo $_SESSION['restaurantData']['name'] ?></h1>
@@ -58,7 +59,7 @@ $utils->isAuthenticated($_SESSION['loginUser']);
             foreach($_SESSION['restaurantTags'] as $tag) {
                 echo $tag;
             }
-
+            echo var_dump($_SESSION['restaurantTags']);
         ?>
         <a href="main.php">戻る</a>       
     </div>

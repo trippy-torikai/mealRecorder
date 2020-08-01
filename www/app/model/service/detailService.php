@@ -36,6 +36,9 @@ class detailService {
         //店舗tag情報を取得、セッションに配置
         $restaurantTagDao = new RestaurantTagDao(); 
         $restaurantTags = $restaurantTagDao->selectTag($restaurantId);
+        if($restaurantTags == false) {
+            header('Location: http://localhost:80/main.php');
+        }
         $_SESSION['restaurantTags'] = $restaurantTags;
 
         //店舗コメント情報を取得、セッションに配置
