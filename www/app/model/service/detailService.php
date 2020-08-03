@@ -17,6 +17,7 @@ class detailService {
     // 関数名：getDetailData
     //-----------------------------------
     // 引数：  $restaurantId  レストランID
+    //        $validation    検証クラスオブジェクト
     //
     // 店舗情報を取得してセッションに格納する
     //====================================
@@ -26,18 +27,24 @@ class detailService {
         //画像パスを取得、セッションに配置
         $imageDao = new ImageDao(); 
         $imagePaths = $imageDao->selectImage($restaurantId);
+        if($imagePaths == false) {
+            return false;
+        }
         $_SESSION['imagePaths'] = $imagePaths;
 
         //店舗情報を取得、セッションに配置
         $restaurantDao = new RestaurantDao(); 
         $restaurantData = $restaurantDao->selectData($restaurantId);
+        if($restaurantData == false) {
+            return false;
+        }
         $_SESSION['restaurantData'] = $restaurantData;
 
         //店舗tag情報を取得、セッションに配置
         $restaurantTagDao = new RestaurantTagDao(); 
         $restaurantTags = $restaurantTagDao->selectTag($restaurantId);
         if($restaurantTags == false) {
-            header('Location: http://localhost:80/main.php');
+            return false;
         }
         $_SESSION['restaurantTags'] = $restaurantTags;
 

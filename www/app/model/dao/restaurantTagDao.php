@@ -28,20 +28,20 @@ class RestaurantTagDao extends DaoAbstract {
                 ON tags.tag_id = restag.tag_id 
                 WHERE restaurant_id = :restaurant_id');
 
-        //検索するIDをバインド
+        //検索するIDをバインドして実行、一次配列に整形
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':restaurant_id', $restaurantId, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        $restaurantTags = array_column($result, 0);
 
-        //sqlを実行する
-        //成功：取得したタグを一次配列に整形してreturn
-        //失敗：boolean(false)をreturn
-        if($stmt->execute()) {
-            $result = $stmt->fetchAll();
-            $restaurantTags = array_column($result, 0);
-            return $restaurantTags;
-        } else {
+        //配列が取得できていなければfalseをreturn
+        if(count($restaurantTags) == 0) {
             return false;
-        }
+        } 
+
+        return $restaurantTags;
+        
 
     }
 

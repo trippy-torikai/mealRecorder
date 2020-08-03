@@ -27,10 +27,29 @@ class RestaurantDao extends DaoAbstract {
 
     public function selectData($restaurantId) {
 
-        $buffer = $this->db->query("select * from restaurants where id='".$restaurantId."'");
-        //echo var_dump($buffer);
-        $restaurantData = $buffer->fetch(PDO::FETCH_ASSOC);
-        return $restaurantData;
+        // $buffer = $this->db->query("select * from restaurants where id='".$restaurantId."'");
+        // //echo var_dump($buffer);
+        // $restaurantData = $buffer->fetch(PDO::FETCH_ASSOC);
+        // return $restaurantData;
+
+
+
+        //sql生成
+        $sql = ('SELECT * 
+        FROM restaurants WHERE restaurant_id = :restaurant_id');
+
+        //検索するIDをバインドして実行、一次配列に整形
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':restaurant_id', $restaurantId, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        //配列が取得できていなければfalseをreturn
+        if(count($result) == 0) {
+            return false;
+        } 
+
+        return $result;
     }
 }
 

@@ -59,7 +59,6 @@ $utils->isAuthenticated($_SESSION['loginUser']);
             foreach($_SESSION['restaurantTags'] as $tag) {
                 echo $tag;
             }
-            echo var_dump($_SESSION['restaurantTags']);
         ?>
         <a href="main.php">戻る</a>       
     </div>
