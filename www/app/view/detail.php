@@ -14,12 +14,11 @@ $utils->isAuthenticated($_SESSION['loginUser']);
 
 <!DOCTYPE html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/resource/css/detail.css">
+    <link rel="stylesheet" type="text/css" href="/resource/css/detail.css">
+    <link rel="stylesheet" type="text/css" href="/resource/css/base-header.css">
 </head>
 <body>
-    <header>
-        <h1>FOOD RECODER</h1>
-    </header>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/app/view/base-header.php'); ?>        
 
     <div class="main-contents">
         <div class="top-contents">
@@ -27,12 +26,12 @@ $utils->isAuthenticated($_SESSION['loginUser']);
         </div>
         <div class="mid-contents">
             <div class="picture-wrapper">        
-                <img id="main-picture" src="resource/img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
+                <img id="main-picture" src="/resource/img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
                 <div class="sub-picture">
-                    <img id="picture-1" src="resource/img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
-                    <img id="picture-2" src="resource/img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
-                    <img id="picture-3" src="resource/img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
-                    <img id="picture-4" src="resource/img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
+                    <img id="picture-1" src="/resource/img/images/<?php echo $_SESSION['imagePaths'][0] ?>">
+                    <img id="picture-2" src="/resource/img/images/<?php echo $_SESSION['imagePaths'][1] ?>">
+                    <img id="picture-3" src="/resource/img/images/<?php echo $_SESSION['imagePaths'][2] ?>">
+                    <img id="picture-4" src="/resource/img/images/<?php echo $_SESSION['imagePaths'][3] ?>">
                 </div>
             </div>
             <div class="comment-wrapper">

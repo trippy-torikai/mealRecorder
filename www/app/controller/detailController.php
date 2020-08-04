@@ -20,10 +20,9 @@ $validation = new Validation();
 //あくまで検証結果をbooleanで返すだけにするか
 //またはエラーメッセージを取得する機能もつけるか
 
-
 $restaurantId = $_GET['q'];
 if(empty($restaurantId)) {
-    header('Location: http://localhost:80/main.php');
+    header('Location: http://localhost:80/app/view/main.php');
     exit;       //@task これがないと何故かdetail.phpに飛んでしまう 要解析
 }
 
@@ -31,17 +30,17 @@ if(!$validation->isValidRestaurantId($restaurantId)) {
     //@task
     //エラーメッセージ
     //遷移元に戻る・・方法わからないので今度実装する
-    header('Location: http://localhost:80/main.php');
+    header('Location: http://localhost:80/app/view/main.php');
 };
 
 //レストラン情報を取得、セッションに格納
 $detailService = new DetailService();
 $isSuccess = $detailService->getDetailData($restaurantId);
 if($isSuccess == false) {
-    header('Location: http://localhost:80/main.php');
+    header('Location: http://localhost:80/app/view/main.php');
 }
 
 //detail.phpへリダイレクト
-header('Location: http://localhost:80/detail.php');
+header('Location: http://localhost:80/app/view/detail.php');
 
 ?>
