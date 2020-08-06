@@ -43,6 +43,15 @@ $utils->isAuthenticated($_SESSION['loginUser']);
             <option value=""></option>
             <option value=""></option>
         </select>
+        <br>
+        <br>
+        <div class="result">
+            <a id="output">
+        </div>
         <a href="./main.php">戻る</a>       
     </div>
+
+
+    <!-- js呼び出し -->
+    <script type="text/javascript" src="/resource/js/searchAjax.js"></script>
 </body>
