@@ -34,18 +34,20 @@ $utils->isAuthenticated($_SESSION['loginUser']);
     <?php include($_SERVER['DOCUMENT_ROOT'].'/app/view/base-header.php'); ?> 
 
     <div class="main-contents">
-        <input id="search-str" type="test">
-        <select name=”item”>
-            <option value="restaurant-name">店名</option>
-            <option value="restaurant-tag">タグ</option>
-        </select>
-        <select name=”mode”>
-            <option value=""></option>
-            <option value=""></option>
-        </select>
+        <div class="menu">
+            <input id="search-str" type="test">
+            <select name=”item”>
+                <option value="restaurant-name">店名</option>
+                <option value="restaurant-tag">タグ</option>
+            </select>
+            <select name=”mode”>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </div>
         <br>
         <br>
-        <div class="result">
+        <div id="result">
             <a id="output">
         </div>
         <a href="./main.php">戻る</a>       
